@@ -14,12 +14,14 @@ import {
 
 import SiteHeader from "@/components/header/SiteHeader";
 import collegeImage from "../../../public/images/collegeone.jpg";
+import FooterSection from "@/components/home/FooterSection";
 
 const accreditations = [
     {
         icon: Star,
         title: "NBA Accredited",
-        description: "Recognized for maintaining the highest quality standards in engineering education.",
+        description:
+            "Recognized for maintaining the highest quality standards in engineering education.",
     },
     {
         icon: Award,
@@ -28,13 +30,15 @@ const accreditations = [
     },
     {
         icon: BadgeCheck,
-        title: "NAAC \u2018A\u2019 Accredited",
-        description: "A reflection of our dedication to academic excellence and continuous improvement.",
+        title: "NAAC ‘A’ Accredited",
+        description:
+            "A reflection of our dedication to academic excellence and continuous improvement.",
     },
     {
         icon: Settings2,
         title: "AICTE Approved",
-        description: "Ensures our programs meet the rigorous standards set by AICTE.",
+        description:
+            "Ensures our programs meet the rigorous standards set by AICTE.",
     },
 ];
 
@@ -75,27 +79,19 @@ const affiliations = [
 
 export default function About() {
     return (
-        <main className="bg-white">
-            {/*
-        NOTE: SiteHeader is currently styled as a transparent/glass overlay
-        meant to sit on top of a dark hero photo (see the homepage's hero
-        section). This page opens straight into a light content section
-        instead of a full-bleed photo, so the header will render with
-        lower contrast here than on the homepage. If that's a problem,
-        SiteHeader needs a "solid" variant/prop for non-hero pages - happy
-        to add that as a follow-up.
-      */}
+        <main className="w-full max-w-[100vw] overflow-x-hidden bg-white">
             <SiteHeader />
 
             {/* About intro */}
-            <section className="bg-[#faf7f2] py-20">
-                <div className="mx-auto grid max-w-8xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
-                    <div>
+            <section className="w-full overflow-hidden bg-[#faf7f2] py-20">
+                <div className="mx-auto grid w-full max-w-8xl min-w-0 grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+                    <div className="min-w-0">
                         <div className="flex items-center gap-3">
                             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500">
                                 About Us
                             </span>
-                            <span className="h-px w-12 bg-gold-500" />
+
+                            <span className="h-px w-12 shrink-0 bg-gold-500" />
                         </div>
 
                         <h1 className="mt-4 font-display text-3xl font-semibold leading-tight text-navy-950 sm:text-4xl lg:text-[2.75rem]">
@@ -126,17 +122,24 @@ export default function About() {
                     </div>
 
                     {/* Diagonal-cut photo frame */}
-                    <div className="relative h-64 w-full sm:h-80 lg:h-96">
+                    <div className="relative h-64 min-w-0 w-full overflow-hidden sm:h-80 lg:h-96">
                         <div
                             aria-hidden
                             className="absolute inset-0 bg-gold-500"
-                            style={{ clipPath: "polygon(0 0, 13% 0, 0 13%)" }}
+                            style={{
+                                clipPath: "polygon(0 0, 13% 0, 0 13%)",
+                            }}
                         />
+
                         <div
                             aria-hidden
                             className="absolute inset-0 bg-navy-950"
-                            style={{ clipPath: "polygon(100% 100%, 87% 100%, 100% 87%)" }}
+                            style={{
+                                clipPath:
+                                    "polygon(100% 100%, 87% 100%, 100% 87%)",
+                            }}
                         />
+
                         <div
                             className="absolute inset-0 overflow-hidden"
                             style={{
@@ -158,11 +161,12 @@ export default function About() {
             </section>
 
             {/* Our Journey */}
-            <section className="bg-white py-20">
-                <div className="mx-auto grid max-w-8xl grid-cols-1 gap-12 px-6 lg:grid-cols-2 lg:gap-16">
-                    <div>
+            <section className="w-full overflow-hidden bg-white py-20">
+                <div className="mx-auto grid w-full max-w-8xl min-w-0 grid-cols-1 gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+                    <div className="min-w-0">
                         <div className="flex items-center gap-3">
-                            <span className="h-px w-10 bg-gold-500" />
+                            <span className="h-px w-10 shrink-0 bg-gold-500" />
+
                             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500">
                                 Our Journey
                             </span>
@@ -186,33 +190,50 @@ export default function About() {
                         </p>
                     </div>
 
-                    <div className="rounded-2xl bg-slate-50 p-6 sm:p-8">
+                    <div className="min-w-0 w-full rounded-2xl bg-slate-50 p-6 sm:p-8">
                         <ul className="divide-y divide-slate-200">
-                            {accreditations.map(({ icon: Icon, title, description }) => (
-                                <li key={title} className="flex items-start gap-4 py-5 first:pt-0 last:pb-0">
-                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy-950">
-                                        <Icon size={20} strokeWidth={1.5} className="text-gold-500" />
-                                    </span>
-                                    <div>
-                                        <p className="font-display text-lg font-semibold text-navy-950">{title}</p>
-                                        <p className="mt-1 text-sm leading-relaxed text-slate-600">{description}</p>
-                                    </div>
-                                </li>
-                            ))}
+                            {accreditations.map(
+                                ({ icon: Icon, title, description }) => (
+                                    <li
+                                        key={title}
+                                        className="flex min-w-0 items-start gap-4 py-5 first:pt-0 last:pb-0"
+                                    >
+                                        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy-950">
+                                            <Icon
+                                                size={20}
+                                                strokeWidth={1.5}
+                                                className="text-gold-500"
+                                            />
+                                        </span>
+
+                                        <div className="min-w-0">
+                                            <p className="break-words font-display text-lg font-semibold text-navy-950">
+                                                {title}
+                                            </p>
+
+                                            <p className="mt-1 break-words text-sm leading-relaxed text-slate-600">
+                                                {description}
+                                            </p>
+                                        </div>
+                                    </li>
+                                ),
+                            )}
                         </ul>
                     </div>
                 </div>
             </section>
 
             {/* Achievements band */}
-            <section className="bg-navy-950 py-16">
-                <div className="mx-auto max-w-8xl px-6 text-center">
+            <section className="w-full overflow-hidden bg-navy-950 py-16">
+                <div className="mx-auto w-full max-w-8xl px-6 text-center">
                     <div className="flex items-center justify-center gap-3">
-                        <span className="h-px w-10 bg-gold-500" />
+                        <span className="h-px w-10 shrink-0 bg-gold-500" />
+
                         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500">
                             Our Achievements
                         </span>
-                        <span className="h-px w-10 bg-gold-500" />
+
+                        <span className="h-px w-10 shrink-0 bg-gold-500" />
                     </div>
 
                     <h2 className="mt-3 font-display text-2xl font-semibold text-white sm:text-3xl">
@@ -220,51 +241,75 @@ export default function About() {
                     </h2>
 
                     <div className="mt-10 grid grid-cols-2 gap-y-10 sm:grid-cols-4 sm:divide-x sm:divide-white/15">
-                        {achievements.map(({ icon: Icon, label, value }) => (
-                            <div key={label} className="px-4">
-                                <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold-500">
-                                    <Icon size={24} strokeWidth={1.5} className="text-navy-950" />
-                                </span>
-                                <p className="mt-3 text-sm font-medium text-white/80">{label}</p>
-                                <p className="mt-1 font-display text-4xl font-bold text-white">{value}</p>
-                            </div>
-                        ))}
+                        {achievements.map(
+                            ({ icon: Icon, label, value }) => (
+                                <div key={label} className="min-w-0 px-4">
+                                    <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold-500">
+                                        <Icon
+                                            size={24}
+                                            strokeWidth={1.5}
+                                            className="text-navy-950"
+                                        />
+                                    </span>
+
+                                    <p className="mt-3 text-sm font-medium text-white/80">
+                                        {label}
+                                    </p>
+
+                                    <p className="mt-1 break-words font-display text-4xl font-bold text-white">
+                                        {value}
+                                    </p>
+                                </div>
+                            ),
+                        )}
                     </div>
                 </div>
             </section>
 
             {/* NAAC accreditation */}
-            <section className="bg-[#faf7f2] py-20">
-                <div className="mx-auto grid max-w-8xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+            <section className="w-full overflow-hidden bg-[#faf7f2] py-20">
+                <div className="mx-auto grid w-full max-w-8xl min-w-0 grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
                     {/* Diagonal-cut NAAC badge card */}
-                    <div className="relative h-72 w-full sm:h-80">
+                    <div className="relative h-72 min-w-0 w-full overflow-hidden sm:h-80">
                         <div
                             aria-hidden
                             className="absolute inset-0 bg-gold-500"
-                            style={{ clipPath: "polygon(100% 100%, 87% 100%, 100% 87%)" }}
+                            style={{
+                                clipPath:
+                                    "polygon(100% 100%, 87% 100%, 100% 87%)",
+                            }}
                         />
+
                         <div
                             className="absolute inset-0 flex flex-col items-center justify-center gap-4 overflow-hidden bg-navy-950"
-                            style={{ clipPath: "polygon(0 0, 100% 0, 100% 87%, 87% 100%, 0 100%)" }}
+                            style={{
+                                clipPath:
+                                    "polygon(0 0, 100% 0, 100% 87%, 87% 100%, 0 100%)",
+                            }}
                         >
-                            <span className="flex h-28 w-28 items-center justify-center rounded-full border-4 border-gold-500 font-display text-5xl font-bold text-gold-500">
+                            <span className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full border-4 border-gold-500 font-display text-5xl font-bold text-gold-500">
                                 A
                             </span>
+
                             <p className="text-sm font-bold uppercase tracking-[0.2em] text-white">
                                 NAAC
                                 <br />
-                                <span className="text-gold-500">Accreditation</span>
+                                <span className="text-gold-500">
+                                    Accreditation
+                                </span>
                             </p>
                         </div>
                     </div>
 
-                    <div>
-                        <div className="flex items-center gap-3">
-                            <span className="h-px w-10 bg-gold-500" />
+                    <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-3">
+                            <span className="h-px w-10 shrink-0 bg-gold-500" />
+
                             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500">
                                 NAAC &lsquo;A&rsquo; Accreditation
                             </span>
-                            <span className="h-px w-10 bg-gold-500" />
+
+                            <span className="h-px w-10 shrink-0 bg-gold-500" />
                         </div>
 
                         <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-navy-950 sm:text-4xl">
@@ -286,9 +331,18 @@ export default function About() {
 
                         <ul className="mt-4 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
                             {evaluationAreas.map((area) => (
-                                <li key={area} className="flex items-center gap-2 text-sm text-slate-700">
-                                    <CheckCircle2 size={18} className="shrink-0 text-gold-500" />
-                                    {area}
+                                <li
+                                    key={area}
+                                    className="flex min-w-0 items-start gap-2 text-sm text-slate-700"
+                                >
+                                    <CheckCircle2
+                                        size={18}
+                                        className="mt-0.5 shrink-0 text-gold-500"
+                                    />
+
+                                    <span className="break-words">
+                                        {area}
+                                    </span>
                                 </li>
                             ))}
                         </ul>
@@ -297,35 +351,51 @@ export default function About() {
             </section>
 
             {/* Affiliations & approvals */}
-            <section className="bg-slate-100 py-20">
-                <div className="mx-auto max-w-8xl px-6 text-center">
-                    <div className="flex items-center justify-center gap-3">
-                        <span className="h-px w-10 bg-gold-500" />
+            <section className="w-full overflow-hidden bg-slate-100 py-20">
+                <div className="mx-auto w-full max-w-8xl px-6 text-center">
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                        <span className="h-px w-10 shrink-0 bg-gold-500" />
+
                         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500">
                             Our Affiliations &amp; Approvals
                         </span>
-                        <span className="h-px w-10 bg-gold-500" />
+
+                        <span className="h-px w-10 shrink-0 bg-gold-500" />
                     </div>
 
                     <h2 className="mt-3 font-display text-2xl font-semibold text-navy-950 sm:text-3xl">
                         A Strong Foundation for Your Future
                     </h2>
 
-                    <div className="mt-12 grid grid-cols-1 gap-6 text-left sm:grid-cols-3">
-                        {affiliations.map(({ icon: Icon, title, description }) => (
-                            <div key={title} className="rounded-xl bg-white p-6 shadow-sm">
-                                <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-navy-950/5">
-                                    <Icon size={22} strokeWidth={1.5} className="text-navy-950" />
-                                </span>
-                                <p className="mt-4 font-display text-base font-semibold leading-snug text-navy-950">
-                                    {title}
-                                </p>
-                                <p className="mt-2 text-sm leading-relaxed text-slate-600">{description}</p>
-                            </div>
-                        ))}
+                    <div className="mt-12 grid min-w-0 grid-cols-1 gap-6 text-left sm:grid-cols-3">
+                        {affiliations.map(
+                            ({ icon: Icon, title, description }) => (
+                                <div
+                                    key={title}
+                                    className="min-w-0 rounded-xl bg-white p-6 shadow-sm"
+                                >
+                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy-950/5">
+                                        <Icon
+                                            size={22}
+                                            strokeWidth={1.5}
+                                            className="text-navy-950"
+                                        />
+                                    </span>
+
+                                    <p className="mt-4 break-words font-display text-base font-semibold leading-snug text-navy-950">
+                                        {title}
+                                    </p>
+
+                                    <p className="mt-2 break-words text-sm leading-relaxed text-slate-600">
+                                        {description}
+                                    </p>
+                                </div>
+                            ),
+                        )}
                     </div>
                 </div>
             </section>
+            <FooterSection />
         </main>
     );
 }

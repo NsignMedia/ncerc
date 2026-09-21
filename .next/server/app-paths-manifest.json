@@ -1,1 +1,7 @@
-{}
+{
+  "/about/directors-executive/page": "app/about/directors-executive/page.js",
+  "/about/management/page": "app/about/management/page.js",
+  "/page": "app/page.js",
+  "/about/principal/page": "app/about/principal/page.js",
+  "/about/disclosure/page": "app/about/disclosure/page.js"
+}
