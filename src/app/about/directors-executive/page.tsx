@@ -280,6 +280,7 @@ export default function Page() {
             </div>
           </div>
         </section>
+        <FooterSection />
       </main>
     </>
   );

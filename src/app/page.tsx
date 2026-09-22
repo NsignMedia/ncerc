@@ -1,8 +1,13 @@
 "use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import { Award, ArrowRight, GraduationCap, MailCheck, Users } from "lucide-react";
+
+import {
+  Award,
+  ArrowRight,
+  GraduationCap,
+  MailCheck,
+  Users,
+} from "lucide-react";
 
 import SiteHeader from "@/components/header/SiteHeader";
 import AboutSection from "@/components/home/AboutSection";
@@ -20,6 +25,7 @@ import AnnouncementBar from "@/components/header/AnnouncementBar";
 import AluminiSection from "@/components/home/AluminiSection";
 import CollegeInteractionSection from "@/components/home/CollegeInteractionSection";
 import FooterSection from "@/components/home/FooterSection";
+
 import collegeImage from "../../public/images/collegeone.jpg";
 import collegeHorizontalImage from "../../public/images/college_horizontal.webp";
 import highlightsImage from "../../public/images/campus_walk.png";
@@ -33,29 +39,13 @@ const stats = [
 ];
 
 export default function Home() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
-
   return (
     <main className="flex flex-col bg-white">
       {/* 
         Hero Section (h-dvh)
         The header floats absolutely over the top edge of the photo.
       */}
-      <section
-        onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="relative isolate h-dvh w-full overflow-hidden"
-      >
+      <section className="relative isolate h-dvh w-full overflow-hidden">
         <Image
           src={collegeImage}
           alt="NCERC campus"
@@ -78,7 +68,9 @@ export default function Home() {
             <h1 className="font-display text-2xl font-bold leading-tight text-navy-950 sm:text-3xl lg:text-4xl">
               Engineering the Future.
               <br />
-              <span className="text-gold-500">Inspiring Innovation.</span>
+              <span className="text-gold-500">
+                Inspiring Innovation.
+              </span>
             </h1>
 
             <div className="my-6 h-1 w-16 bg-gold-500" />
@@ -117,10 +109,12 @@ export default function Home() {
                     className="shrink-0 text-gold-400"
                     strokeWidth={1.5}
                   />
+
                   <div>
                     <p className="text-base font-bold leading-none text-white drop-shadow-sm">
                       {value}
                     </p>
+
                     <p className="mt-1 text-[11px] font-medium leading-tight text-white/70">
                       {label}
                     </p>

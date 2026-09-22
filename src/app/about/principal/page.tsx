@@ -127,7 +127,7 @@ export default function Principal() {
                                             From the Desk
                                         </p>
                                         <p className="mt-1 font-display text-xl text-[#11152f]">
-                                            Principal's Message
+                                            Principal&apos;s Message
                                         </p>
                                     </div>
                                 </div>

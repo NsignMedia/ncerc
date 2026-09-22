@@ -1,7 +1,6 @@
 import SiteHeader from '@/components/header/SiteHeader'
 import FooterSection from '@/components/home/FooterSection'
 import {
-    ArrowDownToLine,
     ArrowUpRight,
     BookOpen,
     FileText,

@@ -8,14 +8,13 @@ import {
     GraduationCap,
     LibraryBig,
     Monitor,
-    Network,
     ScrollText,
     Search,
     Sparkles,
     Users,
 } from "lucide-react";
-import SiteHeader from '@/components/header/SiteHeader'
-import FooterSection from '@/components/home/FooterSection'
+import SiteHeader from '@/components/header/SiteHeader';
+import FooterSection from '@/components/home/FooterSection';
 import React from 'react'
 
 const libraryLinks = [
@@ -369,11 +368,10 @@ const page = () => {
                             </h2>
 
                             <p className="mt-5 text-base leading-8 text-slate-400">
-                                An overview of the library's physical facilities,
+                                An overview of the library&apos;s physical facilities,
                                 collection and daily academic usage.
                             </p>
                         </div>
-
 
                         <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
                             {facilityStats.map((item) => {
