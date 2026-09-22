@@ -1,15 +1,15 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/about/disclosure/page": "app/about/disclosure/page.js",
-  "/about/directors-executive/page": "app/about/directors-executive/page.js",
   "/about/autonomous/page": "app/about/autonomous/page.js",
+  "/about/directors-executive/page": "app/about/directors-executive/page.js",
   "/about/page": "app/about/page.js",
   "/about/management/page": "app/about/management/page.js",
   "/about/principal/page": "app/about/principal/page.js",
   "/academics/autonomousExaminationCell/page": "app/academics/autonomousExaminationCell/page.js",
-  "/academics/courses/page": "app/academics/courses/page.js",
-  "/page": "app/page.js",
   "/academics/library/page": "app/academics/library/page.js",
+  "/academics/courses/page": "app/academics/courses/page.js",
   "/academics/library/ug-library/page": "app/academics/library/ug-library/page.js",
-  "/academics/regulationsAndCurriculum/page": "app/academics/regulationsAndCurriculum/page.js"
+  "/academics/regulationsAndCurriculum/page": "app/academics/regulationsAndCurriculum/page.js",
+  "/page": "app/page.js"
 }
